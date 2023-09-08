@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Budget App | Track your Money</title>
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+    <!-- Other code -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+    <meta name="description" content="Effortlessly 
+    manage your finances with our user-friendly Personal 
+    Finance Tracker. Add, edit, and delete transactions with ease, 
+    while tracking your current balance in real-time. Take control 
+    of your money and 
+    start achieving your financial goals today!" />
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <nav>
+          <div class="logo">
+            <h3>Budget App</h3>
+          </div>
+          <div class="hamburger-menu">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+          </div>
+          <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#track">Track</a></li>
+            <li><a href="#graph-section">Graph</a></li>
+            <li><a href="#reminder-section">Reminder</a></li>
+            <li><a href="index.html"><button class="home">Logout</button></a>
+          </ul>
+        </nav>
+       
+        
+
+
+        <!-- hero section  -->
+
+      <div class="main" >
+
+        <div class="hero" id="hero">
+          <div class="dis">
+            <h1 data-text="Personal Finance Tracker">Personal Finance Tracker</h1>
+            <p>
+              Effortlessly manage your finances with our user-friendly Personal
+              Finance Tracker. Add, edit, and delete transactions with ease,
+              while tracking your current balance in real-time. Take control of
+              your money and start achieving your financial goals today!
+            </p>
+            <ul><a href="#track"><button class="home">Budget Now</button></a>
+          </div>
+
+          <div class="img">
+            <img
+              src="https://img.freepik.com/free-vector/people-analyzing-growth-charts_23-2148866843.jpg?w=1060&t=st=1686308109~exp=1686308709~hmac=9a2217459a32dad5dcdddf69da4aed30b2ee542c6e03e66fbadca5046d40195c"
+              alt="reference image"
+            />
+          </div>
+        </div>
+
+        <!-- Track -->
+        <div class="budget" id="track">
+          <h2 class="track-heading track" >Track Your Finance</h2>
+          <div class="sub-container">
+            <!-- Budget -->
+
+            <div class="total-amount-container">
+              <h3>Budget</h3>
+              <p class="hide error" id="budget-error">
+                Value cannot be empty or negative
+              </p>
+              <input
+                type="number"
+                id="total-amount"
+                placeholder="Enter Total Amount"
+              />
+              <button class="submit" id="total-amount-button">
+                Set Budget
+              </button>
+            </div>
+
+            <!-- Expenditure -->
+            <div class="user-amount-container">
+              <h3>Expenses</h3>
+              <p class="hide error" id="product-title-error">
+                Values cannot be empty
+              </p>
+              <input
+                type="text"
+                class="product-title"
+                id="product-title"
+                placeholder="Enter Title of Product"
+              />
+              <input
+                type="number"
+                id="user-amount"
+                placeholder="Enter Cost of Product"
+              />
+              <button class="submit" id="check-amount">Check Amount</button>
+            </div>
+          </div>
+
+
+          <!-- Output -->
+          <div class="output-container flex-space">
+            <div>
+              <p>Total Budget</p>
+              <span id="amount">0</span>
+            </div>
+            <div>
+              <p>Expenses</p>
+              <span id="expenditure-value">0</span>
+            </div>
+            <div>
+              <p>Balance</p>
+              <span id="balance-amount">0</span>
+            </div>
+          </div>
+
+          <!-- List -->
+          <div class="list">
+            <h3>Expense List</h3>
+            <div class="list-container" id="list"></div>
+          </div>
+        </div><br><br>
+
+        <div class="graph-section" id="graph-section">
+          <h2 class="graph-heading">Visualize Your Financial Progress</h2><br><br><br>
+          <p>
+            
+            Expand your financial awareness and take control of your money like never before with our comprehensive budgeting tool. Keep tabs on your spending, stay updated on your account balance, and make well-informed choices using our interactive bar chart feature.
+          </p>
+          <canvas
+            class="graph"
+            id="myChart"
+            style="width: 100%; max-width: 600px"
+          ></canvas>
+          <div class="graph-container" id="graph"></div>
+        </div>
+
+        <div class="section-4">
+          <div class="reminder-section" id="reminder-section">
+            <h2>Reminder Section</h2>
+            <p>Add your reminder and never forget to pay your bills on time.</p>
+            <input
+              type="text"
+              id="reminder-name"
+              maxlength="30"
+              placeholder="Reminder Name"
+              required
+            />
+            <input
+              type="date"
+              id="reminder-date"
+              placeholder="Select Date: 2023-06-10"
+              required
+            />
+            <input
+              type="time"
+              id="reminder-time"
+              placeholder="Hour : Minutes"
+              required
+            />
+            <button id="add-reminder-btn">Add Reminder</button>
+          </div>
+
+          <ul id="reminder-list"></ul>
+        </div>
+
+        <!--contact-->
+    
+        <!--footer-->
+        <footer class="footer">
+          <div class="box">
+              <h2> Links </h2>
+              <ul class="links">
+                  <li><a href="#"> Home </a></li>
+                  <li><a href="#"> Track </a></li>
+                  <li><a href="#"> Graph </a></li>
+                  <li><a href="#"> Reminder </a></li>
+                  
+              </ul>
+          </div>
+          <div class="box">
+              <h2> News Letter </h2>
+              <form   action="https://formspree.io/f/xpzgrwyw"
+              method="POST"  class="registration">
+                  <input type="email" name="email" id="email" placeholder="Enter your email Address">
+                  <button class="sub" type="submit"> Subscibe Now </button>
+              </form>
+          </div>
+          <div class="box">
+              <h2> Contact </h2>
+              <p class="address"> KIGALI RWANDA <br>
+                  
+              </p>
+              <ul class="social">
+                  <li><i class="fa-brands fa-facebook"></i></li>
+                  <li><i class="fa-brands fa-twitter"></i></li>
+                  <li><i class="fa-brands fa-instagram"></i></li>
+                  <li><i class="fa-brands fa-youtube"></i></li>
+              </ul>
+          </div>
+      </footer>
+    
+        
+
+    <!-- Script -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+  </body>
+</html>
